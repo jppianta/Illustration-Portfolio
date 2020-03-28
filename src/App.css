@@ -1,5 +1,4 @@
 @import '~antd/dist/antd.css';
-
 html, body, #root {
   height: 100%;
 }
@@ -16,7 +15,7 @@ html, body, #root {
   align-items: center;
 }
 
-.menu > .optionContainer {
+.menu>.optionContainer {
   flex: 1;
   text-align: center;
 }
@@ -28,10 +27,10 @@ html, body, #root {
 
 .App {
   flex: 1;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
 }
 
 .header {
@@ -48,35 +47,45 @@ html, body, #root {
   border-radius: 50%;
 }
 
-.header > h1 {
+.header>h1 {
   font-family: museo-slab, serif;
   font-weight: 100;
   font-style: normal;
 }
 
 .tabContent {
-  flex: 1;
   padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .portfolio {
-  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 1s; /* Firefox < 16 */
-  -ms-animation: fadein 1s; /* Internet Explorer */
-  -o-animation: fadein 1s; /* Opera < 12.1 */
+  -webkit-animation: fadein 1s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 1s;
+  /* Internet Explorer */
+  -o-animation: fadein 1s;
+  /* Opera < 12.1 */
   animation: fadein 0.5s;
 }
 
 .about {
   display: flex;
-  width: 100%;
   max-width: 800px;
   font-size: 16px;
+  width: 100%;
 
-  -webkit-animation: fadein2 1s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein2 1s; /* Firefox < 16 */
-  -ms-animation: fadein2 1s; /* Internet Explorer */
-  -o-animation: fadein2 1s; /* Opera < 12.1 */
+  -webkit-animation: fadein2 1s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein2 1s;
+  /* Firefox < 16 */
+  -ms-animation: fadein2 1s;
+  /* Internet Explorer */
+  -o-animation: fadein2 1s;
+  /* Opera < 12.1 */
   animation: fadein2 0.5s;
 }
 
@@ -86,7 +95,7 @@ html, body, #root {
   gap: 20px;
   align-items: flex-start;
   max-width: 1250px;
-  overflow-y: auto;
+  width: 100%;
 }
 
 .fullImgContainer {
@@ -101,7 +110,7 @@ html, body, #root {
   max-width: 800px;
 }
 
-.fullImg > img {
+.fullImg>img {
   height: 100%;
   width: 100%;
 }
@@ -110,7 +119,7 @@ html, body, #root {
   border-radius: 5px;
 }
 
-.imageContainer > img {
+.imageContainer>img {
   height: 100%;
   width: 100%;
   border-radius: 5px;
@@ -130,11 +139,19 @@ html, body, #root {
 }
 
 @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadein2 {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

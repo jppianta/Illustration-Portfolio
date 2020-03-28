@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { portrait } from './portfolio';
+import { portolio } from './portfolio';
 import me from './assets/me.jpg'
 import { Card } from 'antd';
 import Modal from 'antd/lib/modal/Modal';
@@ -19,11 +19,16 @@ class App extends Component {
   }
 
   selectImg = (event) => {
+    console.log(portolio)
     const element = event.target;
 
     const img = this.getImgElement(element).src;
 
-    const selected = portrait.find(image => img.endsWith(image.src));
+    const selected = portolio.find(image => {
+      const splittedPath = image.src.split('/');
+      const imageName = splittedPath[splittedPath.length - 1];
+      return img.endsWith(imageName);
+    })
 
     this.setState({ selected, visible: true });
   }
@@ -70,24 +75,28 @@ class App extends Component {
         </div>
         {
           this.state.menuOption === 'Portfolio' ?
-            <div className="portfolio tabContent">
-              {
-                portrait.map(image =>
-                  <Card
-                    key={image.title}
-                    hoverable
-                    cover={<img className="cardImg" alt={image.title} src={image.src} />}
-                    onClick={this.selectImg}
-                  >
-                    <Meta title={image.title} />
-                  </Card>
-                )
+            <div className="tabContent">
+              <div className="portfolio">
+                {
+                  portolio.map(image =>
+                    <Card
+                      key={image.title}
+                      hoverable
+                      cover={<img className="cardImg" alt={image.title} src={image.src} />}
+                      onClick={this.selectImg}
+                    >
+                      <Meta title={image.title} />
+                    </Card>
+                  )
 
-              }
+                }
+              </div>
             </div> :
-            <div className="about tabContent">
-              Hi, my name is João Pedro Pianta. I am a brazillian Software Engineer who loves art. I started creating some illustrations just for fun, 
-              but since I am a good frontend engineer, why not combine the two skills and create this beatiful portfolio, right?
+            <div className="tabContent">
+              <div className="about">
+                Hi, my name is João Pedro Pianta. I am a brazillian Software Engineer who loves art. I started creating some illustrations just for fun,
+                but since I am a good frontend engineer, why not combine the two skills and create this beatiful portfolio, right?
+            </div>
             </div>
         }
         <Modal
