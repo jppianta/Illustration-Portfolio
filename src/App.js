@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { portolio } from './portfolio';
 import me from './assets/me.jpg'
+import love from './assets/LoveSquare.png'
 import { Card } from 'antd';
 import Modal from 'antd/lib/modal/Modal';
 
@@ -94,7 +95,7 @@ class App extends Component {
             <div className="tabContent">
               <div className="about">
                 Hi, my name is João Pedro Pianta. I am a brazillian Software Engineer who loves art. I started creating some illustrations just for fun,
-                but since I am a good frontend engineer, why not combine the two skills and create this beatiful portfolio, right?
+                but since I am a good frontend engineer, why not combine the two skills and create this beautiful portfolio, right?
             </div>
             </div>
         }
@@ -107,6 +108,11 @@ class App extends Component {
         >
           {this.state.selected ? <img className="modalImg" alt={this.state.selected.title} src={this.state.selected.src} /> : null}
         </Modal>
+        <div className="footer">
+          <span>Made with</span>
+          <img src={love} alt="Love" className="loveSmall" />
+          <span>by myself</span>
+        </div>
       </div>
     );
   }

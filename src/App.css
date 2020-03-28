@@ -58,6 +58,7 @@ html, body, #root {
   width: 100%;
   display: flex;
   justify-content: center;
+  min-height: calc(100% - 270px);
 }
 
 .portfolio {
@@ -149,6 +150,23 @@ html, body, #root {
   font-style: normal;
   color: #424242;
   font-size: 18px;
+}
+
+.footer {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  width: 100%;
+}
+
+.footer > * {
+  margin-right: 8px;
+}
+
+.loveSmall {
+  height: 16px;
 }
 
 @keyframes fadein {
