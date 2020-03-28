@@ -1,38 +1,140 @@
-.App {
+@import '~antd/dist/antd.css';
+
+html, body, #root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+}
+
+.menu {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu > .optionContainer {
+  flex: 1;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.separator {
+  color: #e0e0e0;
+  height: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logoImg {
+  height: 100px;
+  border-radius: 50%;
+}
+
+.header > h1 {
+  font-family: museo-slab, serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.tabContent {
+  flex: 1;
+  padding: 20px;
+}
+
+.portfolio {
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1s; /* Opera < 12.1 */
+  animation: fadein 0.5s;
+}
+
+.about {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  font-size: 16px;
+
+  -webkit-animation: fadein2 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein2 1s; /* Firefox < 16 */
+  -ms-animation: fadein2 1s; /* Internet Explorer */
+  -o-animation: fadein2 1s; /* Opera < 12.1 */
+  animation: fadein2 0.5s;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  align-items: flex-start;
+  max-width: 1250px;
+  overflow-y: auto;
+}
+
+.fullImgContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullImg {
+  width: 100%;
+  max-width: 800px;
+}
+
+.fullImg > img {
+  height: 100%;
+  width: 100%;
+}
+
+.imageContainer {
+  border-radius: 5px;
+}
+
+.imageContainer > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.modalImg {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.menuOption:hover {
+  cursor: pointer;
+}
+
+.selectedOption {
+  text-decoration: underline;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadein2 {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
