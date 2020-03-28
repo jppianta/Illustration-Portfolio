@@ -77,7 +77,6 @@ html, body, #root {
   max-width: 800px;
   font-size: 16px;
   width: 100%;
-
   -webkit-animation: fadein2 1s;
   /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein2 1s;
@@ -136,6 +135,20 @@ html, body, #root {
 
 .selectedOption {
   text-decoration: underline;
+}
+
+.ant-card-body {
+  padding: 16px;
+}
+
+.ant-card-meta-title, .ant-modal-title {
+  /* font-family: lavigne-display, sans-serif;
+  font-weight: 300; */
+  font-family: bilo, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #424242;
+  font-size: 18px;
 }
 
 @keyframes fadein {

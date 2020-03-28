@@ -19,7 +19,6 @@ class App extends Component {
   }
 
   selectImg = (event) => {
-    console.log(portolio)
     const element = event.target;
 
     const img = this.getImgElement(element).src;
